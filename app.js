@@ -1,14 +1,32 @@
+const toggleIcon = document.querySelector(".toggle-icon");
+const icon = document.querySelector(".toggle-icon i");
+const emRadio = document.getElementById("em");
+const remRadio = document.getElementById("rem");
+const changePx = document.getElementById("changePx");
 const inputVal = document.getElementById("val");
 const valueInEms = document.getElementById("valueInEms");
 const copyBtn = document.getElementById("copybtn");
-const changePx = document.getElementById("changePx");
-const toggleIcon = document.querySelector(".toggle-icon");
-const icon = document.querySelector(".toggle-icon i");
-
 // calculate ems
 inputVal.addEventListener("keyup", () => {
-  valueInEms.textContent =
-    (+inputVal.value / +changePx.value).toFixed(3) + "em";
+  if (emRadio.checked) {
+    valueInEms.textContent =
+      (+inputVal.value / +changePx.value).toFixed(3) + "em";
+  } else if (remRadio.checked) {
+    valueInEms.textContent =
+      (+inputVal.value / +changePx.value).toFixed(3) + "rem";
+  }
+});
+// Change em to rem and vice versa on radio button click in real time
+document.querySelectorAll(".choice label input").forEach((radioInput) => {
+  radioInput.addEventListener("click", () => {
+    if (emRadio.checked) {
+      valueInEms.textContent =
+        (+inputVal.value / +changePx.value).toFixed(3) + "em";
+    } else if (remRadio.checked) {
+      valueInEms.textContent =
+        (+inputVal.value / +changePx.value).toFixed(3) + "rem";
+    }
+  });
 });
 // copy to clipboard
 copyBtn.addEventListener("click", () => {

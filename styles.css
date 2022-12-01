@@ -72,6 +72,20 @@ h1 {
   box-shadow: -30px -30px 60px var(--box-color3),
     30px 30px 60px var(--box-color4);
 }
+.choice {
+  margin-bottom: 1em;
+}
+.choice label {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.choice label,
+.choice input {
+  cursor: pointer;
+  margin: 0;
+  /* accent-color: orangered; */
+}
+
 .px__font__to__em {
   display: flex;
   align-items: flex-end;
@@ -115,13 +129,18 @@ input[type="number"]::-webkit-outer-spin-button {
   padding: 0;
   margin-bottom: 1em;
 }
-#myLink{
+.footer {
   color: var(--text);
-  text-decoration: none;
-  font-size: 1em;
+  font-size: 0.8rem;
   font-weight: 600;
-  margin-top: 1em;
   position: absolute;
-  bottom: .5em;
-  right: .5em;
+  bottom: 0.5em;
+  right: 0;
+  left: 0;
+  width: max-content;
+  margin: 0 auto;
+  letter-spacing: 1.2px;
+}
+.footer a {
+  color: var(--text);
 }

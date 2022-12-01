@@ -27,14 +27,20 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer" />
     <script src="app.js" defer></script>
-    <title>PX TO EM CONVERTER</title>
+    <title>px to em/rem Converter | Asher</title>
   </head>
   <body>
     <div class="toggle-icon">
       <i class="fa-solid fa-moon moon"></i>
     </div>
-    <h1>CSS px to em Converter</h1>
+    <h1>CSS px to em/rem Converter</h1>
     <div class="container">
+      <div class="choice">
+        <label for="em"
+          >em<input type="radio" name="emrem" id="em" checked
+        /></label>
+        <label for="rem">rem<input type="radio" name="emrem" id="rem" /></label>
+      </div>
       <h2>Change default px value:</h2>
       <input
         id="changePx"
@@ -53,6 +59,17 @@
       </div>
       <button id="copybtn">Copy</button>
     </div>
-    <a id="myLink" href="https://www.github.com/asherayub" target="_blank">Visit GitHub</a>
+    <div class="footer">
+      <p>
+        Made with ❤️ by Asher |
+        <a
+          id="myLink"
+          href="https://www.github.com/asherayub"
+          target="_blank"
+          rel="noopener"
+          >GitHub</a
+        >
+      </p>
+    </div>
   </body>
 </html>
