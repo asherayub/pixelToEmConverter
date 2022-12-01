@@ -27,9 +27,18 @@
     <h1>CSS px to em Converter</h1>
     <div class="container">
       <h2>Change default px value:</h2>
-      <input id="changePx" type="number" value="16" />
+      <input
+        id="changePx"
+        type="number"
+        placeholder="value"
+        value="16"
+        onkeypress="if(this.value.length==3) return false;" />
       <div class="px__font__to__em">
-        <input type="number" placeholder="value" id="val" />
+        <input
+          type="number"
+          placeholder="value"
+          id="val"
+          onkeypress="if(this.value.length ===3) return false;" />
         <h2>px =</h2>
         <h2>&nbsp;<span id="valueInEms"></span></h2>
       </div>
