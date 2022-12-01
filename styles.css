@@ -1,14 +1,45 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans&family=Rubik+Glitch&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Kalam&display=swap");
+:root {
+  --background: #d1d1d1;
+  --text: #000;
+  --box-color1: #e0e0e0;
+  --box-color2: #bcbcbc;
+  --box-color3: #a7a7a7;
+  --box-color4: #fbfbfb;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
+.dark {
+  --background: #000;
+  --text: #fff;
+  --box-color1: #181818;
+  --box-color2: #1a1a1a;
+  --box-color3: #1d1d1d;
+  --box-color4: #0f0f0f;
+}
+.toggle-icon {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  cursor: pointer;
+  display: flex;
+  transition: all 300ms ease;
+}
+.moon {
+  font-size: 2rem;
+  margin: auto;
+}
 body {
-  background: #d1d1d1;
-  color: #000;
+  background: var(--background);
+  color: var(--text);
+  transition: all 300ms ease;
 }
 
 h1 {
@@ -31,20 +62,22 @@ h1 {
   margin: 0 auto;
   margin-top: 5em;
   border-radius: 3em;
-  color: #000;
+  color: var(--text);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border-radius: 50px;
-  background: linear-gradient(315deg, #e0e0e0, #bcbcbc);
-  box-shadow: -30px -30px 60px #a7a7a7, 30px 30px 60px #fbfbfb;
+  background: linear-gradient(315deg, var(--box-color1), var(--box-color2));
+  box-shadow: -30px -30px 60px var(--box-color3),
+    30px 30px 60px var(--box-color4);
 }
 .px__font__to__em {
   display: flex;
   align-items: flex-end;
 }
 input {
+  color: var(--text);
   width: 1.625em;
   background-color: transparent;
   border: none;
@@ -52,11 +85,11 @@ input {
   margin: 0.3em 0.3em 0 0.3em;
   text-align: center;
   font-weight: 600;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid var(--text);
   outline: none;
 }
-input::placeholder{
-  font-size: .6em;
+input::placeholder {
+  font-size: 0.6em;
 }
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
@@ -66,10 +99,12 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 #copybtn {
   background-color: transparent;
+  color: var(--text);
   margin-top: 1.5em;
   padding: 1em 0;
   width: 40%;
   cursor: pointer;
+  border: 2px solid var(--text);
   border-radius: 1.9em;
   font-weight: 600;
   text-transform: uppercase;
