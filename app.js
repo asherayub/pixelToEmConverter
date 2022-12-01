@@ -23,18 +23,25 @@ copyBtn.addEventListener("click", () => {
 // theme toggle
 toggleIcon.addEventListener("click", () => {
   document.body.classList.toggle("dark");
-  localStorage.setItem("theme", document.body.classList);
-  icon.classList.toggle("fa-sun");
-  icon.classList.toggle("fa-moon");
+  if (document.body.classList.contains("dark")) {
+    localStorage.setItem("theme", "dark");
+    icon.classList.remove("fa-moon");
+    icon.classList.add("fa-sun");
+  } else if (!document.body.classList.contains("dark")) {
+    localStorage.setItem("theme", "light");
+    icon.classList.remove("fa-sun");
+    icon.classList.add("fa-moon");
+  }
 });
 // Storting user theme preference in local storage
 window.onload = () => {
   if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark");
+    icon.classList.add("fa-sun");
+    icon.classList.remove("fa-moon");
+  } else if (localStorage.getItem("theme") === "light") {
+    document.body.classList.remove("dark");
     icon.classList.remove("fa-sun");
     icon.classList.add("fa-moon");
-  } else {
-    icon.classList.remove("fa-moon");
-    icon.classList.add("fa-sun");
   }
 };
