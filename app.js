@@ -10,10 +10,10 @@ const copyBtn = document.getElementById("copybtn");
 inputVal.addEventListener("keyup", () => {
   if (emRadio.checked) {
     valueInEms.textContent =
-      (+inputVal.value / +changePx.value).toFixed(3) + "em";
+      (+inputVal.value / +changePx.value).toString().slice(0, 5) + "em";
   } else if (remRadio.checked) {
     valueInEms.textContent =
-      (+inputVal.value / +changePx.value).toFixed(3) + "rem";
+      (+inputVal.value / +changePx.value).toString().slice(0, 5) + "rem";
   }
 });
 // Change em to rem and vice versa on radio button click in real time
@@ -21,10 +21,10 @@ document.querySelectorAll(".choice label input").forEach((radioInput) => {
   radioInput.addEventListener("click", () => {
     if (emRadio.checked) {
       valueInEms.textContent =
-        (+inputVal.value / +changePx.value).toFixed(3) + "em";
+        (+inputVal.value / +changePx.value).toString().slice(0, 5) + "em";
     } else if (remRadio.checked) {
       valueInEms.textContent =
-        (+inputVal.value / +changePx.value).toFixed(3) + "rem";
+        (+inputVal.value / +changePx.value).toString().slice(0, 5) + "rem";
     }
   });
 });
